@@ -1,0 +1,105 @@
+﻿<UserControl x:Class="Presentation.Rates"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Extended="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+
+             xmlns:local="clr-namespace:Presentation"
+             mc:Ignorable="d" 
+            >
+    <UserControl.Resources>
+        <Style TargetType="Image">
+            <Setter Property="Width" Value="30" />
+            <Setter Property="Height" Value="30" />
+        </Style>
+        <Style TargetType="StackPanel">
+            <Setter Property="Opacity" Value="1"></Setter>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush>
+                        aqua
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style >
+        <Style TargetType="TextBlock" >
+            <Setter Property="Margin" Value="0 15 0 0 "></Setter>
+        </Style>
+        <Style TargetType="TextBlock"  x:Key="CurrencyValue">
+            <Setter Property="Margin" Value="0 15 0 0 "></Setter>
+        </Style>
+     
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel  Margin="20">
+            <Image Source="{Binding CurrencyInformationCollection[0].PathToImage}"   Margin="15"></Image>
+
+            <TextBlock FontSize="25" TextAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource CurrencyValue}"  >
+                <Run Text="{Binding CurrencyInformationCollection[0].Rate.Name}"></Run>
+                <LineBreak></LineBreak>
+                <LineBreak></LineBreak>
+                <Run Text="{Binding CurrencyInformationCollection[0].Rate.Value}"></Run>
+            </TextBlock>
+
+        </StackPanel>
+        <StackPanel Grid.Column="1" Margin="20">
+            <Image Source="{Binding CurrencyInformationCollection[1].PathToImage}" Margin="15"></Image>
+            <TextBlock FontSize="25" TextAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource CurrencyValue}"  >
+                <Run Text="{Binding CurrencyInformationCollection[1].Rate.Name}"></Run>
+                <LineBreak></LineBreak>
+                <LineBreak></LineBreak>
+                <Run Text="{Binding CurrencyInformationCollection[1].Rate.Value}"></Run>
+            </TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Column="2"  Margin="20">
+            <Image Source="{Binding CurrencyInformationCollection[2].PathToImage}" Margin="15"></Image>
+            <TextBlock FontSize="25" TextAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource CurrencyValue}"  >
+                <Run Text="{Binding CurrencyInformationCollection[2].Rate.Name}"></Run>
+                <LineBreak></LineBreak>
+                <LineBreak></LineBreak>
+                <Run Text="{Binding CurrencyInformationCollection[2].Rate.Value}"></Run>
+            </TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="1"  Margin="20">
+            <Image Source="{Binding CurrencyInformationCollection[3].PathToImage}" Margin="10"></Image>
+            <TextBlock FontSize="25" TextAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource CurrencyValue}"  >
+                <Run Text="{Binding CurrencyInformationCollection[3].Rate.Name}"></Run>
+                <LineBreak></LineBreak>
+                <LineBreak></LineBreak>
+                <Run Text="{Binding CurrencyInformationCollection[3].Rate.Value}"></Run>
+            </TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="20">
+            <Image Source="{Binding CurrencyInformationCollection[4].PathToImage}" Margin="10"></Image>
+            <TextBlock FontSize="25" TextAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource CurrencyValue}"  >
+                <Run Text="{Binding CurrencyInformationCollection[4].Rate.Name}"></Run>
+                <LineBreak></LineBreak>
+                <LineBreak></LineBreak>
+                <Run Text="{Binding CurrencyInformationCollection[4].Rate.Value}"></Run>
+            </TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="2" Margin="20">
+            <Image Source="{Binding CurrencyInformationCollection[5].PathToImage}" Margin="10"></Image>
+            <TextBlock FontSize="25" TextAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource CurrencyValue}"  >
+                <Run Text="{Binding CurrencyInformationCollection[5].Rate.Name}"></Run>
+                <LineBreak></LineBreak>
+                <LineBreak></LineBreak>
+                <Run Text="{Binding CurrencyInformationCollection[5].Rate.Value}"></Run>
+            </TextBlock>
+        </StackPanel>
+
+
+
+    </Grid>
+</UserControl>
